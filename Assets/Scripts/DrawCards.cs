@@ -9,15 +9,19 @@ public class DrawCards : MonoBehaviour
     public GameObject discardPile;
     public GameObject goDownArea;
 
-    private GameObject[] cardList = GameManager.cardList;
+    public GameObject canvas;
+    private GameObject[] cardList;
     private List<GameObject> cardDeck = new List<GameObject>();
 
     public void Start()
     {
+        Manager managerScript = canvas.GetComponent<Manager>();
+        cardList = managerScript.GetCardList();
         foreach(GameObject card in cardList)
         {
             cardDeck.Add(card);
         }
+        
     }
     public void OnClick()
     {
@@ -26,6 +30,6 @@ public class DrawCards : MonoBehaviour
         cardDeck.Remove(currentCard);
         
         playerCard.transform.SetParent(playerHandArea.transform, false);
-        
+        Debug.Log(cardDeck.Count);
     }
 }
