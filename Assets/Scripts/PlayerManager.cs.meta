@@ -3,7 +3,42 @@ guid: 5946edd72eddb19479013c7cbbfe7609
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - playerHandArea: {instanceID: 0}
+  - faceDownPile: {instanceID: 0}
+  - discardPile: {instanceID: 0}
+  - goDownArea: {instanceID: 0}
+  - A: {fileID: 3449844178009888874, guid: 9084ec62525a9df4ba006af4c93b1abd, type: 3}
+  - B: {fileID: 1746080498473190940, guid: 8933f059125065740afb0593c8d02f81, type: 3}
+  - C: {fileID: 2291078341123602375, guid: c7b9cc893f08f8b4bb925655f6b0da77, type: 3}
+  - D: {fileID: 4506620385295728050, guid: 8c7f58a2f2f10ae42aa78d8958a8d1a9, type: 3}
+  - E: {fileID: 8394721118217257802, guid: 35901bb221180044b942743d3e11e8f1, type: 3}
+  - F: {fileID: 2166676425901022596, guid: a47a7200e7aabb54d858f58e1b4a4163, type: 3}
+  - G: {fileID: 2841982729353121933, guid: d0daa48618212ce4a844f87729c38d5d, type: 3}
+  - H: {instanceID: 0}
+  - I: {instanceID: 0}
+  - J: {instanceID: 0}
+  - K: {instanceID: 0}
+  - L: {instanceID: 0}
+  - M: {instanceID: 0}
+  - N: {instanceID: 0}
+  - O: {instanceID: 0}
+  - P: {instanceID: 0}
+  - Q: {instanceID: 0}
+  - R: {instanceID: 0}
+  - S: {instanceID: 0}
+  - T: {instanceID: 0}
+  - U: {instanceID: 0}
+  - V: {instanceID: 0}
+  - W: {instanceID: 0}
+  - X: {instanceID: 0}
+  - Y: {instanceID: 0}
+  - Z: {instanceID: 0}
+  - ER: {instanceID: 0}
+  - IN: {instanceID: 0}
+  - CL: {instanceID: 0}
+  - TH: {instanceID: 0}
+  - QU: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
