@@ -18,13 +18,10 @@ ScriptsOnlyBuild:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.IK.Editor.dll:
     - UnityEditor.U2D.IK.IKEditorManager
-    - UnityEditor.U2D.IK.IKGizmos
     Unity.2D.IK.Runtime.dll:
     - UnityEditor.U2D.IK.IKEditorManagerHelper
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
-    - UnityEditor.Tilemaps.GridPaletteBrushes
-    - UnityEditor.Tilemaps.GridPalettes
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.SceneViewOpenTilePaletteHelper
     - UnityEditor.Tilemaps.TileDragAndDropManager
@@ -74,9 +71,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1456}
     - Class: 114
-      Script: {instanceID: 1470}
+      Script: {instanceID: 1468}
     - Class: 114
-      Script: {instanceID: 1538}
+      Script: {instanceID: 1536}
+    - Class: 114
+      Script: {instanceID: 1902}
     - Class: 114
       Script: {instanceID: 2668}
     - Class: 114
@@ -86,27 +85,25 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2994}
     - Class: 114
-      Script: {instanceID: 3316}
+      Script: {instanceID: 3330}
     - Class: 114
-      Script: {instanceID: 3434}
+      Script: {instanceID: 3448}
     - Class: 114
-      Script: {instanceID: 3560}
+      Script: {instanceID: 3574}
     - Class: 114
-      Script: {instanceID: 4200}
+      Script: {instanceID: 4216}
     - Class: 114
-      Script: {instanceID: 4948}
+      Script: {instanceID: 4964}
     - Class: 114
-      Script: {instanceID: 4960}
+      Script: {instanceID: 4976}
     - Class: 114
-      Script: {instanceID: 5170}
+      Script: {instanceID: 5186}
     - Class: 114
-      Script: {instanceID: 5332}
+      Script: {instanceID: 5348}
     - Class: 114
-      Script: {instanceID: 5562}
+      Script: {instanceID: 5578}
     - Class: 114
-      Script: {instanceID: 5708}
-    - Class: 114
-      Script: {instanceID: 32738}
+      Script: {instanceID: 5724}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -132,16 +129,16 @@ ScriptsOnlyBuild:
     className: Image
   - hash:
       serializedVersion: 2
-      Hash: ae83e830e7a90c0aff918c4c2e520825
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.UI
-    className: GraphicRaycaster
-  - hash:
-      serializedVersion: 2
       Hash: 699619b86d9359741a4f58540298c80b
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Text
+  - hash:
+      serializedVersion: 2
+      Hash: ae83e830e7a90c0aff918c4c2e520825
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: GraphicRaycaster
   - hash:
       serializedVersion: 2
       Hash: bcaee4c2a83047257b5f47d6ed264b75
@@ -174,7 +171,7 @@ ScriptsOnlyBuild:
     className: Ball
   - hash:
       serializedVersion: 2
-      Hash: c1beb75a4faf6eb841d9068eb4fba44a
+      Hash: c64a32d02ea96b7e89132e44390f1411
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: DragDrop
@@ -316,6 +313,12 @@ ScriptsOnlyBuild:
     assemblyName: Mirror.Examples.dll
     namespaceName: Mirror.Examples.MultipleAdditiveScenes
     className: PlayerController
+  - hash:
+      serializedVersion: 2
+      Hash: 8419b557a8bf9a93b97139c0638840a2
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: TogglePanels
   - hash:
       serializedVersion: 2
       Hash: 192ca9716d03752ea1d90a78bc2daac9
@@ -1216,12 +1219,6 @@ ScriptsOnlyBuild:
     assemblyName: Mirror.Examples.dll
     namespaceName: Mirror.Examples.NetworkRoom
     className: NetworkRoomPlayerExt
-  - hash:
-      serializedVersion: 2
-      Hash: 8419b557a8bf9a93b97139c0638840a2
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: TogglePanels
   platform: 5
   scenePathNames:
   - Assets/Scenes/SampleScene.unity

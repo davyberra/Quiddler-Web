@@ -41,6 +41,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mirror.Editor", "Mirror.Edi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mirror.CompilerSymbols", "Mirror.CompilerSymbols.csproj", "{E03C9464-5CA3-A0BE-96BB-6EC190147BA1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParrelSync", "ParrelSync.csproj", "{45E307E2-55FB-38E9-6D67-83C424F0B2A0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -127,6 +129,10 @@ Global
 		{E03C9464-5CA3-A0BE-96BB-6EC190147BA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E03C9464-5CA3-A0BE-96BB-6EC190147BA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E03C9464-5CA3-A0BE-96BB-6EC190147BA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45E307E2-55FB-38E9-6D67-83C424F0B2A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45E307E2-55FB-38E9-6D67-83C424F0B2A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45E307E2-55FB-38E9-6D67-83C424F0B2A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45E307E2-55FB-38E9-6D67-83C424F0B2A0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

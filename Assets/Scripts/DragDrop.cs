@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Mirror;
 
-public class DragDrop : MonoBehaviour
+public class DragDrop : NetworkBehaviour
 {
     public GameObject Canvas;
     public GameObject goDownArea;
