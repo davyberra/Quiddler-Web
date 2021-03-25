@@ -11,11 +11,20 @@ public class TogglePanels : NetworkBehaviour
 
     public void OnClick()
     {
+        if (NetworkServer.connections.Count == 2)
+        {
+            StartGameView();
+            //NetworkIdentity networkIdentity = NetworkClient.connection.identity;
+            //PlayerManager = networkIdentity.GetComponent<PlayerManager>();
+           
+        }
+    }
+
+    [ClientRpc]
+    public void StartGameView()
+    {
         mainMenuPanel.SetActive(false);
         gamePanel.SetActive(true);
-        NetworkIdentity networkIdentity = NetworkClient.connection.identity;
-        PlayerManager = networkIdentity.GetComponent<PlayerManager>();
-        PlayerManager.CmdDealCards();
     }
     
 }

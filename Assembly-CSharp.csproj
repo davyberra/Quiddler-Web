@@ -59,6 +59,7 @@
     <Compile Include="Assets\Scripts\DragDrop.cs" />
     <Compile Include="Assets\Scripts\CardList.cs" />
     <Compile Include="Assets\Scripts\DrawCards.cs" />
+    <Compile Include="Assets\ParrelSync\Examples\CustomArgumentExample.cs" />
     <Compile Include="Assets\Scripts\TogglePanels.cs" />
     <Compile Include="Assets\Scripts\CardClass.cs" />
     <Compile Include="Assets\Scripts\PlayerManager.cs" />
@@ -67,7 +68,7 @@
     <Compile Include="Assets\Scripts\saveWord.cs" />
     <Compile Include="Assets\Scripts\Manager.cs" />
     <Compile Include="Assets\Scripts\GoDown.cs" />
-    <Compile Include="Assets\ParrelSync\Examples\CustomArgumentExample.cs" />
+    <Compile Include="Assets\Scripts\DeckHandler.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Mirror\Plugins\Mono.Cecil\Mono.CecilX.dll" />
@@ -736,11 +737,11 @@
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Mathematics">
-      <HintPath>Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.2D.IK.Runtime">
       <HintPath>Library\ScriptAssemblies\Unity.2D.IK.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mathematics">
+      <HintPath>Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Animation.Triangle.Runtime">
       <HintPath>Library\ScriptAssemblies\Unity.2D.Animation.Triangle.Runtime.dll</HintPath>
@@ -791,6 +792,10 @@
       <Project>{5B898EE0-082C-0CF9-2AA4-E9955596D344}</Project>
       <Name>Mirror.Weaver</Name>
     </ProjectReference>
+    <ProjectReference Include="ParrelSync.csproj">
+      <Project>{45E307E2-55FB-38E9-6D67-83C424F0B2A0}</Project>
+      <Name>ParrelSync</Name>
+    </ProjectReference>
     <ProjectReference Include="Mirror.Editor.csproj">
       <Project>{C4DE1D89-6DB7-2371-68E1-D8C8B6A1B6D4}</Project>
       <Name>Mirror.Editor</Name>
@@ -826,10 +831,6 @@
     <ProjectReference Include="Mirror.Examples.Cloud.Pong.csproj">
       <Project>{E2C3344F-B9C8-C449-30D3-7AE121E52416}</Project>
       <Name>Mirror.Examples.Cloud.Pong</Name>
-    </ProjectReference>
-    <ProjectReference Include="ParrelSync.csproj">
-      <Project>{45E307E2-55FB-38E9-6D67-83C424F0B2A0}</Project>
-      <Name>ParrelSync</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

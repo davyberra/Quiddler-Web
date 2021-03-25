@@ -44,8 +44,8 @@ public class PlayerManager : NetworkBehaviour
     public GameObject CL;
     public GameObject TH;
     public GameObject QU;
-    public GameObject[] cardList;
-    public List<GameObject> cardDeck = new List<GameObject>();
+    public CardClass[] cardList;
+    public List<CardClass> cardDeck = new List<CardClass>();
 
     public turnHandler turnHandler;
 
@@ -57,82 +57,61 @@ public class PlayerManager : NetworkBehaviour
         discardPile = GameObject.Find("discardPile");
         goDownArea = GameObject.Find("goDownArea");
         mainCanvas = GameObject.Find("Main Canvas");
-        
-        //gameMenu = GameObject.Find("Game Menu");
-        //gameMenu.SetActive(true);
-        //mainCanvas.SetActive(false);
-        turnHandler.playerCount += 1;
+        cardList = faceDownPile.GetComponentsInChildren<CardClass>();
         NetworkIdentity networkIdentity = NetworkClient.connection.identity;
+        DeckHandler deckHandler = networkIdentity.GetComponent<DeckHandler>();
+        deckHandler.AssignAuthority(connectionToClient);
+        CmdDealHand();
         
-        Debug.Log(turnHandler.playerCount);
-    }
-
-    [Server]
-    public override void OnStartServer()
-    {
-        cardList = new GameObject[118] { A, A, A, A, A, A, A, A, A, A, B, B, C, C, D, D, D, D, E, E, E, E, E, E, E, E, E, E, E, E, F, F, G, G, G, G, H, H, I, I, I, I, I, I, I, I, J, J, K, K, L, L, L, L, M, M, N, N, N, N, N, N, O, O, O, O, O, O, O, O, P, P, Q, Q, R, R, R, R, R, R, S, S, S, S, T, T, T, T, T, T, U, U, U, U, U, U, V, V, W, W, X, X, Y, Y, Y, Y, Z, Z, ER, ER, CL, CL, IN, IN, TH, TH, QU, QU };
-        foreach (GameObject card in cardList)
-        {
-            cardDeck.Add(card);
-        }
-
-        //Shuffle the cards
-        for (int i = 0; i < cardDeck.Count; i++)
-        {
-            int num1 = UnityEngine.Random.Range(0, cardDeck.Count);
-            int num2 = UnityEngine.Random.Range(0, cardDeck.Count);
-            GameObject card1 = cardDeck[num1], card2 = cardDeck[num2];
-
-            cardDeck[num1] = card2;
-            cardDeck[num2] = card1;
-        }
-
-        //for (int i = 0; i < 118; i++)
-        //{
-        //    GameObject currentCard = cardDeck[0];
-        //    GameObject playerCard = Instantiate(currentCard, new Vector2(0, 0), Quaternion.identity);
-        //    cardDeck.Remove(currentCard);
-
-        //    NetworkServer.Spawn(playerCard, connectionToClient);
-        //    playerCard.transform.SetParent(faceDownPile.transform, false);
-            
-        //}
     }
 
     [Command]
-    public void CmdDealCards()
+    void CmdDealHand()
     {
-        List<GameObject> playerDeck = new List<GameObject>();
-        foreach (GameObject card in cardDeck)
+        if (hasAuthority)
         {
-            playerDeck.Add(card);
+            DealHand();
         }
-        for (int i = 0; i < 118; i++)
-        {
-            GameObject currentCard = playerDeck[0];
-            GameObject playerCard = Instantiate(currentCard, new Vector2(0, 0), Quaternion.identity);
-            playerDeck.Remove(currentCard);
-
-            NetworkServer.Spawn(playerCard, connectionToClient);
-            //playerCard.transform.SetParent(faceDownPile.transform, false);
-            RpcShowCard(playerCard, "roundStart");
-
-        }
-        Debug.Log("cardDeck length: " + cardDeck.Count);
-        Debug.Log("called CmdDealCards");
-        
     }
 
+    [TargetRpc]
+    void DealHand()
+    {
+        for (int i = 0; i < turnHandler.cardCount; i++)
+        {
+            foreach (CardClass card in cardList)
+            {
+                cardDeck.Add(card);
+                
+
+            }
+            NetworkIdentity networkIdentity = NetworkClient.connection.identity;
+            CardClass playerCard = cardDeck[cardDeck.Count - 1];
+            playerCard.transform.SetParent(playerHandArea.transform, false);
+            NetworkIdentity cardIdentity = playerCard.GetComponent<NetworkIdentity>();
+            cardIdentity.AssignClientAuthority(connectionToClient);
+            RpcShowCard(playerCard.transform, "dealHand");
+        }
+    }
 
     [ClientRpc]
-    public void RpcShowCard(GameObject card, string type)
+    public void RpcShowCard(Transform card, string type)
     {
+        if (!hasAuthority)
+        {
+            return;
+        }
         if (type == "roundStart")
         {
-            
-            
-            card.transform.SetParent(faceDownPile.transform, false);
-                                  
+
+
+            card.SetParent(faceDownPile.transform, false);
+
+        }
+        else if (type == "dealHand")
+        {
+            card.SetParent(playerHandArea.transform, false);
+            card.position = playerHandArea.transform.position;
         }
     }
 

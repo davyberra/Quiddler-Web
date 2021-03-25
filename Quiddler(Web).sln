@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mirror.Weaver", "Mirror.Wea
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mirror.Tests", "Mirror.Tests.csproj", "{53153844-9B77-AACF-32B0-29E9000F2A77}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParrelSync", "ParrelSync.csproj", "{45E307E2-55FB-38E9-6D67-83C424F0B2A0}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeaverTestExtraAssembly", "WeaverTestExtraAssembly.csproj", "{17C01578-7D69-30CE-BEA7-94F0334E99A7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mirror.Tests.Performance.Editor", "Mirror.Tests.Performance.Editor.csproj", "{662E6852-BAF5-3191-3B79-DE6E7C2C6F16}"
@@ -40,8 +42,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mirror.Editor", "Mirror.Editor.csproj", "{C4DE1D89-6DB7-2371-68E1-D8C8B6A1B6D4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mirror.CompilerSymbols", "Mirror.CompilerSymbols.csproj", "{E03C9464-5CA3-A0BE-96BB-6EC190147BA1}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParrelSync", "ParrelSync.csproj", "{45E307E2-55FB-38E9-6D67-83C424F0B2A0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -113,6 +113,10 @@ Global
 		{53153844-9B77-AACF-32B0-29E9000F2A77}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{53153844-9B77-AACF-32B0-29E9000F2A77}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{53153844-9B77-AACF-32B0-29E9000F2A77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45E307E2-55FB-38E9-6D67-83C424F0B2A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45E307E2-55FB-38E9-6D67-83C424F0B2A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45E307E2-55FB-38E9-6D67-83C424F0B2A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45E307E2-55FB-38E9-6D67-83C424F0B2A0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{17C01578-7D69-30CE-BEA7-94F0334E99A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{17C01578-7D69-30CE-BEA7-94F0334E99A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{17C01578-7D69-30CE-BEA7-94F0334E99A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -129,10 +133,6 @@ Global
 		{E03C9464-5CA3-A0BE-96BB-6EC190147BA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E03C9464-5CA3-A0BE-96BB-6EC190147BA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E03C9464-5CA3-A0BE-96BB-6EC190147BA1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{45E307E2-55FB-38E9-6D67-83C424F0B2A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{45E307E2-55FB-38E9-6D67-83C424F0B2A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{45E307E2-55FB-38E9-6D67-83C424F0B2A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{45E307E2-55FB-38E9-6D67-83C424F0B2A0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
