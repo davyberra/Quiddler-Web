@@ -17,24 +17,24 @@ public class PlayerManager : NetworkBehaviour
 
     public turnHandler turnHandler;
 
-    //public override void OnStartClient()
-    //{
-    //    base.OnStartClient();
-        //turnHandler.playerCount += 1;
-        //playerNumber = turnHandler.playerCount;
+    public override void OnStartLocalPlayer()
+    {
+        base.OnStartLocalPlayer();
+        turnHandler.playerCount += 1;
+        playerNumber = turnHandler.playerCount;
 
-        //playerHandArea = GameObject.Find("playerHandArea");
-        //faceDownPile = GameObject.Find("faceDownPile");
-        //discardPile = GameObject.Find("discardPile");
-        //goDownArea = GameObject.Find("goDownArea");
-        //mainCanvas = GameObject.Find("Game Panel");
+        playerHandArea = GameObject.Find("playerHandArea");
+        faceDownPile = GameObject.Find("faceDownPile");
+        discardPile = GameObject.Find("discardPile");
+        goDownArea = GameObject.Find("goDownArea");
+        mainCanvas = GameObject.Find("Game Panel");
 
 
         //deckHandler.AssignAuthority(connectionToClient, cardList);
-        
-        
-    //}
 
-    
+
+    }
+
+
 
 }

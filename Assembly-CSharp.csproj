@@ -65,10 +65,11 @@
     <Compile Include="Assets\Scripts\PlayerManager.cs" />
     <Compile Include="Assets\Scripts\WordList.cs" />
     <Compile Include="Assets\Scripts\TurnHandler.cs" />
+    <Compile Include="Assets\Scripts\DeckHandler.cs" />
     <Compile Include="Assets\Scripts\saveWord.cs" />
     <Compile Include="Assets\Scripts\Manager.cs" />
     <Compile Include="Assets\Scripts\GoDown.cs" />
-    <Compile Include="Assets\Scripts\DeckHandler.cs" />
+    <Compile Include="Assets\Scripts\RecallCards.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Mirror\Plugins\Mono.Cecil\Mono.CecilX.dll" />

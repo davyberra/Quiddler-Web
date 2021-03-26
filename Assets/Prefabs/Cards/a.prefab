@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -7847866275501248726, guid: f46a2b68ede12bc4da6003195061d5e2, type: 3}
+      propertyPath: m_AssetId
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 428718876589744615, guid: f46a2b68ede12bc4da6003195061d5e2, type: 3}
       propertyPath: letter
       value: a
@@ -109,11 +113,11 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 0c4823c7eb33a1b43895edec58ad44c4, type: 3}
     - target: {fileID: 5596072671855507139, guid: f46a2b68ede12bc4da6003195061d5e2, type: 3}
       propertyPath: m_Color.b
-      value: 0.8443396
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5596072671855507139, guid: f46a2b68ede12bc4da6003195061d5e2, type: 3}
       propertyPath: m_Color.g
-      value: 0.9103378
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5596072671855507139, guid: f46a2b68ede12bc4da6003195061d5e2, type: 3}
       propertyPath: m_Color.r
