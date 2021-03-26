@@ -11,9 +11,14 @@ public class TogglePanels : NetworkBehaviour
 
     public void OnClick()
     {
-        if (NetworkServer.connections.Count == 2)
+        if (NetworkServer.connections.Count <= 2)
         {
+            
             StartGameView();
+            GameObject faceDownPile = GameObject.Find("faceDownPile");
+            DeckHandler deckHandler = faceDownPile.GetComponent<DeckHandler>();
+            deckHandler.PrepareDeck();
+            deckHandler.DealHand();
             //NetworkIdentity networkIdentity = NetworkClient.connection.identity;
             //PlayerManager = networkIdentity.GetComponent<PlayerManager>();
            

@@ -9,6 +9,7 @@ public class DeckHandler : NetworkBehaviour
     public GameObject faceDownPile;
     public GameObject mainCanvas;
     public GameObject discardPile;
+    public GameObject playerHandArea;
 
     public GameObject A;
     public GameObject B;
@@ -50,12 +51,12 @@ public class DeckHandler : NetworkBehaviour
     {      
         faceDownPile = GameObject.Find("faceDownPile");
         discardPile = GameObject.Find("discardPile");
-        
-        mainCanvas = GameObject.Find("Main Canvas");
+        playerHandArea = GameObject.Find("playerHandArea");
+        mainCanvas = GameObject.Find("Game Panel");
     }
 
     [Server]
-    public override void OnStartServer()
+    public void PrepareDeck()
     {
         cardList = new GameObject[118] { A, A, A, A, A, A, A, A, A, A, B, B, C, C, D, D, D, D, E, E, E, E, E, E, E, E, E, E, E, E, F, F, G, G, G, G, H, H, I, I, I, I, I, I, I, I, J, J, K, K, L, L, L, L, M, M, N, N, N, N, N, N, O, O, O, O, O, O, O, O, P, P, Q, Q, R, R, R, R, R, R, S, S, S, S, T, T, T, T, T, T, U, U, U, U, U, U, V, V, W, W, X, X, Y, Y, Y, Y, Z, Z, ER, ER, CL, CL, IN, IN, TH, TH, QU, QU };
         foreach (GameObject card in cardList)
@@ -82,12 +83,59 @@ public class DeckHandler : NetworkBehaviour
         }
     }
 
-    public void AssignAuthority(NetworkConnection conn)
+    public void AssignAuthority(NetworkConnection conn, CardClass[] cardList)
     {
-        foreach (GameObject card in cardDeck)
+        
+        foreach (CardClass card in cardList)
         {
             NetworkIdentity cardIdentity = card.GetComponent<NetworkIdentity>();
             cardIdentity.AssignClientAuthority(conn);
+        }
+    }
+
+    [Command]
+    void CmdDealHand()
+    {
+        if (hasAuthority)
+        {
+            DealHand();
+        }
+    }
+
+    [ClientRpc]
+    public void DealHand()
+    {
+        
+        for (int i = 0; i < turnHandler.cardCount; i++)
+        {
+            CardClass[] faceDownCards = faceDownPile.GetComponentsInChildren<CardClass>();
+            NetworkIdentity networkIdentity = NetworkClient.connection.identity;
+            CardClass playerCard = faceDownCards[faceDownCards.Length - 1];
+            playerCard.transform.SetParent(playerHandArea.transform, false);
+            NetworkIdentity cardIdentity = playerCard.GetComponent<NetworkIdentity>();
+            //cardIdentity.AssignClientAuthority(connectionToClient);
+            RpcShowCard(playerCard.transform, "dealHand");
+        }
+    }
+
+    [ClientRpc]
+    public void RpcShowCard(Transform card, string type)
+    {
+        if (!hasAuthority)
+        {
+            return;
+        }
+        if (type == "roundStart")
+        {
+
+
+            card.SetParent(faceDownPile.transform, false);
+
+        }
+        else if (type == "dealHand")
+        {
+            card.SetParent(playerHandArea.transform, false);
+            card.position = playerHandArea.transform.position;
         }
     }
 

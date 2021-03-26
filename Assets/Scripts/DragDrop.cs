@@ -18,7 +18,7 @@ public class DragDrop : NetworkBehaviour
 
     private void Awake()
     {
-        Canvas = GameObject.Find("Main Canvas");
+        Canvas = GameObject.Find("Game Panel");
         goDownArea = GameObject.Find("goDownArea");
         discardPile = GameObject.Find("discardPile");
         faceDownPile = GameObject.Find("faceDownPile");

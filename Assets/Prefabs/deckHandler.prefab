@@ -1,0 +1,107 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8278658518522714915
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8278658518522714914}
+  - component: {fileID: 8278658518522714912}
+  - component: {fileID: 8278658518522714913}
+  m_Layer: 5
+  m_Name: deckHandler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &8278658518522714914
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8278658518522714915}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &8278658518522714912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8278658518522714915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 0
+  serverOnly: 0
+  visible: 0
+  m_AssetId: 
+  hasSpawned: 0
+--- !u!114 &8278658518522714913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8278658518522714915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8172b2fbd4066e442a2c786859ba1afb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  faceDownPile: {fileID: 0}
+  mainCanvas: {fileID: 0}
+  discardPile: {fileID: 0}
+  A: {fileID: 3449844178009888874, guid: 9084ec62525a9df4ba006af4c93b1abd, type: 3}
+  B: {fileID: 1746080498473190940, guid: 8933f059125065740afb0593c8d02f81, type: 3}
+  C: {fileID: 2291078341123602375, guid: c7b9cc893f08f8b4bb925655f6b0da77, type: 3}
+  D: {fileID: 4506620385295728050, guid: 8c7f58a2f2f10ae42aa78d8958a8d1a9, type: 3}
+  E: {fileID: 8394721118217257802, guid: 35901bb221180044b942743d3e11e8f1, type: 3}
+  F: {fileID: 2166676425901022596, guid: a47a7200e7aabb54d858f58e1b4a4163, type: 3}
+  G: {fileID: 2841982729353121933, guid: d0daa48618212ce4a844f87729c38d5d, type: 3}
+  H: {fileID: 7857031716040540567, guid: 6bc9de1d05f0c2e43b2324763d78de6c, type: 3}
+  I: {fileID: 4245349316180134106, guid: 2033e2be1e8508c4e991e77869636962, type: 3}
+  J: {fileID: 9137416793936543618, guid: 433a7c85b97f1824a91b7e0ae2981987, type: 3}
+  K: {fileID: 2176693221607792600, guid: 709b16cb7b19ec743a7ba81e9e3191df, type: 3}
+  L: {fileID: 7478903889916070310, guid: f842512ceb456a94bb6e9e93ed9f0354, type: 3}
+  M: {fileID: 2862717706973178606, guid: 8bba257305f89b445a0398770372519a, type: 3}
+  N: {fileID: 1608574907707387229, guid: cd106b1a79d12b9469502de7c53dfd46, type: 3}
+  O: {fileID: 6293886691448534329, guid: 22e9b36ae850e9341a71d3414049625e, type: 3}
+  P: {fileID: 557692668308073033, guid: f8df90f32df5ebf44a489e9ba193af76, type: 3}
+  Q: {fileID: 3928329243270421332, guid: 32882d9c27231e641a742bbb71874168, type: 3}
+  R: {fileID: 5567938558584730943, guid: c0df30b63a3a3654b883e0fd3b2fd7c5, type: 3}
+  S: {fileID: 2472978186610491626, guid: 14134d65973de284797aabe1a3450970, type: 3}
+  T: {fileID: 9101691401658915645, guid: d94674e9ce5400143a18ec99d8499305, type: 3}
+  U: {fileID: 2954988589053348742, guid: baf6c43e0025d2a489abbeaa1b34ae1b, type: 3}
+  V: {fileID: 3089728003392586700, guid: 2bc1b2eaa221f514b8ff981a4b67a282, type: 3}
+  W: {fileID: 6068036012734314547, guid: d2d82c3a4f824af47b72b75d85ca824d, type: 3}
+  X: {fileID: 2942328209245230658, guid: dd53de176a8a99d429d07e8b4079753d, type: 3}
+  Y: {fileID: 3380658676332018923, guid: 7963eb488b5fb914d8d1ecf1581d0a02, type: 3}
+  Z: {fileID: 617501153840948443, guid: f1f311e30d0bbce449733d9cf8fac852, type: 3}
+  ER: {fileID: 1200687787570361310, guid: 16eb6d9c018079c418e98a11974fec43, type: 3}
+  IN: {fileID: 1742303520221665523, guid: 8f23f056cbcb3684284eb85e330ad5ec, type: 3}
+  CL: {fileID: 737660048853968671, guid: de5dfe885b481904291d055a5a10a741, type: 3}
+  TH: {fileID: 4046469717532477525, guid: ca65c25d9987d224ca1f595dca1e4669, type: 3}
+  QU: {fileID: 5117968318467239320, guid: 48651cd776454fe41be45d1f0dd19628, type: 3}
+  cardList: []
+  cardDeck: []
+  turnHandler: {fileID: 0}
