@@ -110,7 +110,7 @@ public class DeckHandler : NetworkBehaviour
         {
             CardClass[] faceDownCards = faceDownPile.GetComponentsInChildren<CardClass>();
             NetworkIdentity networkIdentity = NetworkClient.connection.identity;
-            CardClass playerCard = faceDownCards[faceDownCards.Length - 1];
+            CardClass playerCard = faceDownCards[0];
             playerCard.transform.SetParent(playerHandArea.transform, false);
             NetworkIdentity cardIdentity = playerCard.GetComponent<NetworkIdentity>();
             //cardIdentity.AssignClientAuthority(connectionToClient);
