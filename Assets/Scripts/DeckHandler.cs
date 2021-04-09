@@ -77,7 +77,7 @@ public class DeckHandler : NetworkBehaviour
         foreach (GameObject card in cardDeck)
         {
             GameObject currentCard = Instantiate(card, new Vector2(0, 0), Quaternion.identity);
-            NetworkServer.Spawn(currentCard);
+            NetworkServer.Spawn(currentCard, connectionToClient);
             currentCard.transform.SetParent(faceDownPile.transform, false);
             currentCard.transform.position = faceDownPile.transform.position;
             RpcShowCard(currentCard.transform, "roundStart");
@@ -113,15 +113,20 @@ public class DeckHandler : NetworkBehaviour
             NetworkIdentity networkIdentity = NetworkClient.connection.identity;
             CardClass playerCard = faceDownCards[0];
             playerCard.transform.SetParent(playerHandArea.transform, false);
+            
             NetworkIdentity cardIdentity = playerCard.GetComponent<NetworkIdentity>();
             //cardIdentity.AssignClientAuthority(connectionToClient);
             ClientShowCard(playerCard.transform, "dealHand");
         }
     }
 
-
+    [ClientRpc]
     public void ClientShowCard(Transform card, string type)
     {
+        //if (!hasAuthority)
+        //{
+        //    return;
+        //}
         if (type == "dealHand")
         {
             card.SetParent(playerHandArea.transform, false);
