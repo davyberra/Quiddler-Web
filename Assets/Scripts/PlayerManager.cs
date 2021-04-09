@@ -34,6 +34,7 @@ public class PlayerManager : NetworkBehaviour
             mainCanvas = GameObject.Find("Game Panel");
         }
 
+
         //deckHandler.AssignAuthority(connectionToClient, cardList);
 
 

@@ -80,6 +80,7 @@ public class DeckHandler : NetworkBehaviour
             NetworkServer.Spawn(currentCard);
             currentCard.transform.SetParent(faceDownPile.transform, false);
             currentCard.transform.position = faceDownPile.transform.position;
+            RpcShowCard(currentCard.transform, "roundStart");
         }
     }
 
@@ -102,7 +103,7 @@ public class DeckHandler : NetworkBehaviour
         }
     }
 
-    [ClientRpc]
+    [Server]
     public void DealHand()
     {
         
@@ -114,17 +115,27 @@ public class DeckHandler : NetworkBehaviour
             playerCard.transform.SetParent(playerHandArea.transform, false);
             NetworkIdentity cardIdentity = playerCard.GetComponent<NetworkIdentity>();
             //cardIdentity.AssignClientAuthority(connectionToClient);
-            RpcShowCard(playerCard.transform, "dealHand");
+            ClientShowCard(playerCard.transform, "dealHand");
+        }
+    }
+
+
+    public void ClientShowCard(Transform card, string type)
+    {
+        if (type == "dealHand")
+        {
+            card.SetParent(playerHandArea.transform, false);
+            card.position = playerHandArea.transform.position;
         }
     }
 
     [ClientRpc]
     public void RpcShowCard(Transform card, string type)
     {
-        if (!hasAuthority)
-        {
-            return;
-        }
+        //if (!hasAuthority)
+        //{
+        //    return;
+        //}
         if (type == "roundStart")
         {
 
