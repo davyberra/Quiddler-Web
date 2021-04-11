@@ -79,10 +79,10 @@ public class DeckHandler : NetworkBehaviour
         foreach (GameObject card in cardDeck)
         {
             GameObject currentCard = Instantiate(card, new Vector2(0, 0), Quaternion.identity);
-            NetworkServer.Spawn(currentCard, connectionToClient);
+            NetworkServer.Spawn(currentCard);
             currentCard.transform.SetParent(faceDownPile.transform, false);
             currentCard.transform.position = faceDownPile.transform.position;
-            RpcShowCard(currentCard.transform, "roundStart");
+            TargetShowCard(connectionToClient, currentCard.transform, "roundStart");
         }
     }
 
@@ -139,8 +139,8 @@ public class DeckHandler : NetworkBehaviour
         }
     }
 
-    [ClientRpc]
-    public void RpcShowCard(Transform card, string type)
+    [TargetRpc]
+    public void TargetShowCard(NetworkConnection target, Transform card, string type)
     {
         //if (!hasAuthority)
         //{
