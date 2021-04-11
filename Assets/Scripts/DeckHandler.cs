@@ -46,6 +46,7 @@ public class DeckHandler : NetworkBehaviour
     public List<GameObject> cardDeck = new List<GameObject>();
 
     public turnHandler turnHandler;
+    public NetworkManager networkManager;
 
     public void Awake()
     {      
@@ -53,6 +54,7 @@ public class DeckHandler : NetworkBehaviour
         discardPile = GameObject.Find("discardPile");
         playerHandArea = GameObject.Find("playerHandArea");
         mainCanvas = GameObject.Find("Game Panel");
+        networkManager = FindObjectOfType<NetworkManager>();
     }
 
     [Server]
@@ -106,18 +108,21 @@ public class DeckHandler : NetworkBehaviour
     [Server]
     public void DealHand()
     {
-        
-        for (int i = 0; i < turnHandler.cardCount; i++)
+        for (int i = 0; i < networkManager.numPlayers; i++)
         {
-            CardClass[] faceDownCards = faceDownPile.GetComponentsInChildren<CardClass>();
-            NetworkIdentity networkIdentity = NetworkClient.connection.identity;
-            CardClass playerCard = faceDownCards[0];
-            playerCard.transform.SetParent(playerHandArea.transform, false);
+            for (int j = 0; j < turnHandler.cardCount; j++)
+            {
+                CardClass[] faceDownCards = faceDownPile.GetComponentsInChildren<CardClass>();
+                NetworkIdentity networkIdentity = NetworkClient.connection.identity;
+                CardClass playerCard = faceDownCards[0];
+                playerCard.transform.SetParent(playerHandArea.transform, false);
             
-            NetworkIdentity cardIdentity = playerCard.GetComponent<NetworkIdentity>();
-            //cardIdentity.AssignClientAuthority(connectionToClient);
-            ClientShowCard(playerCard.transform, "dealHand");
+                NetworkIdentity cardIdentity = playerCard.GetComponent<NetworkIdentity>();
+                //cardIdentity.AssignClientAuthority(connectionToClient);
+                ClientShowCard(playerCard.transform, "dealHand");
+            }
         }
+        
     }
 
     [ClientRpc]

@@ -7,7 +7,7 @@ public class TogglePanels : NetworkBehaviour
 {
     public GameObject mainMenuPanel;
     public GameObject gamePanel;
-    public PlayerManager PlayerManager;
+    public PlayerManager playerManager;
 
     public void OnClick()
     {
@@ -21,12 +21,20 @@ public class TogglePanels : NetworkBehaviour
             deckHandler.PrepareDeck();
             
         }
-        deckHandler.DealHand();
-
-        //NetworkIdentity networkIdentity = NetworkClient.connection.identity;
-        //PlayerManager = networkIdentity.GetComponent<PlayerManager>();
-           
         
+
+        NetworkIdentity networkIdentity = NetworkClient.connection.identity;
+        playerManager = networkIdentity.GetComponent<PlayerManager>();
+        //playerManager.CmdDealHand();   
+        
+    }
+
+    [Client]
+    public void DrawOnClick()
+    {
+        NetworkIdentity networkIdentity = NetworkClient.connection.identity;
+        playerManager = networkIdentity.GetComponent<PlayerManager>();
+        playerManager.CmdDealHand();
     }
 
     [Client]
